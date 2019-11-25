@@ -1,0 +1,26 @@
+package home_page;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class webelement {
+
+	public static void main(String[] args) {
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\Abhishek\\Downloads\\Drivers\\chromedriver.exe"); 
+		WebDriver driver = new ChromeDriver(); 
+		
+		driver.get("https://www.facebook.com/");
+  String til= driver.getTitle();
+	System.out.println("tille is "+ til);
+	System.out.println(driver.getCurrentUrl());
+    WebElement  unm = driver.findElement(By.id("email"));
+    System.out.println(unm.getAttribute("id"));
+    System.out.println(unm.getTagName());
+    driver.findElement(By.className("inputtext"));
+    driver.findElement(By.tagName("input"));
+    driver.findElement(By.linkText("Forgotten account?")).click();
+	}
+
+}
